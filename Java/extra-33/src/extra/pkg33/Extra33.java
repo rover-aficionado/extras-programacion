@@ -25,6 +25,11 @@ public class Extra33 {
         int valorResultante=0;
         
         // verifica el valor, si es la velocidad, la distancia o el tiempo
+        /*usando la fórmula v=d/t donde:
+        v=valocidad
+        d=distancia
+        t=tiempo
+        la operación se despeja y se verifica usando el código siguiente*/
         
         if (valor1.charAt(0)=='D' && valor2.charAt(0)=='T'){
             valorResultante = n1/n2;
@@ -42,26 +47,6 @@ public class Extra33 {
             valorResultante = n2/n1;
             resultado= "T="+String.valueOf(valorResultante);
         }
-        
-//        switch (valor1.charAt(0)) {
-//            case 'V': // si es la velocidad
-//                valor1 = valor1.replace(texto, "");
-//                valor2 = valor2.replace(texto, "");
-//                resultado = n1*n2;    
-//                break;
-//            case 'D': // si es la distancia
-//                valor1 = valor1.replace(texto, "");
-//                valor2 = valor2.replace(texto, "");
-//                resultado = n1/n2;    
-//                break;
-//            case 'T': // si es el tiempo
-//                valor1 = valor1.replace(texto, "");
-//                valor2 = valor2.replace(texto, "");
-//                resultado = n1/n2;    
-//                break;
-//            default:
-//                throw new AssertionError();
-//        }
         
         return resultado;
         
