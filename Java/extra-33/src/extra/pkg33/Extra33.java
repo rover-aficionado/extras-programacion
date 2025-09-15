@@ -14,35 +14,54 @@ import java.util.Scanner;
  */
 public class Extra33 {
 
-    public static int resultado(String valor1, String valor2){ // devuelve el resultado del cálculo
-        int resultado=0;
+    public static String resultado(String valor1, String valor2){ // devuelve el resultado del cálculo
+        String resultado = "";
         String texto = "VDT=";
         
         // extrae los números
         int n1 = Integer.parseInt(valor1.substring(2));
         int n2 = Integer.parseInt(valor2.substring(2));
         
+        int valorResultante=0;
         
         // verifica el valor, si es la velocidad, la distancia o el tiempo
-        switch (valor1.charAt(0)) {
-            case 'V': // si es la velocidad
-                valor1 = valor1.replace(texto, "");
-                valor2 = valor2.replace(texto, "");
-                resultado = n1*n2;    
-                break;
-            case 'D': // si es la distancia
-                valor1 = valor1.replace(texto, "");
-                valor2 = valor2.replace(texto, "");
-                resultado = n1/n2;    
-                break;
-            case 'T': // si es el tiempo
-                valor1 = valor1.replace(texto, "");
-                valor2 = valor2.replace(texto, "");
-                resultado = n1/n2;    
-                break;
-            default:
-                throw new AssertionError();
+        
+        if (valor1.charAt(0)=='D' && valor2.charAt(0)=='T'){
+            valorResultante = n1/n2;
+            resultado = "V="+String.valueOf(valorResultante);
+        } else if (valor1.charAt(0)=='T' && valor2.charAt(0)=='V'){
+            valorResultante = n1*n2;
+            resultado = "D="+String.valueOf(valorResultante);
+        } else if (valor1.charAt(0)=='D' && valor2.charAt(0)=='V'){
+            valorResultante = n1*n2;
+            resultado = "T="+String.valueOf(valorResultante);
+        } else if (valor1.charAt(0)=='V' && valor2.charAt(0) == 'T'){
+            valorResultante=n2*n1;
+            resultado="D="+String.valueOf(valorResultante);
+        } else if (valor1.charAt(0) == 'V' && valor2.charAt(0) == 'D'){
+            valorResultante = n2/n1;
+            resultado= "T="+String.valueOf(valorResultante);
         }
+        
+//        switch (valor1.charAt(0)) {
+//            case 'V': // si es la velocidad
+//                valor1 = valor1.replace(texto, "");
+//                valor2 = valor2.replace(texto, "");
+//                resultado = n1*n2;    
+//                break;
+//            case 'D': // si es la distancia
+//                valor1 = valor1.replace(texto, "");
+//                valor2 = valor2.replace(texto, "");
+//                resultado = n1/n2;    
+//                break;
+//            case 'T': // si es el tiempo
+//                valor1 = valor1.replace(texto, "");
+//                valor2 = valor2.replace(texto, "");
+//                resultado = n1/n2;    
+//                break;
+//            default:
+//                throw new AssertionError();
+//        }
         
         return resultado;
         
@@ -66,10 +85,10 @@ public class Extra33 {
             
         }
         
+        // impresión de los resultados
         for (String numero : numeros) {
             String[] valores = numero.split("\\$");
             System.out.println(resultado(valores[0], valores[1]));
         }
     }
-
 }
