@@ -1,0 +1,13 @@
+-------------INFORME DE LA PARTIDA-------------
+nombre del jugador: SONIAG
+preguntas acertadas: 6/10
+tiempo empleado: -25 segundos
+fecha de realización: 2025-05-22
+
+----------------PREGUNTAS ACERTADAS----------------
+pregunta: PLANETA MAS GRANDE DEL SISTEMA SOLAR   ->   respuesta: JUPITER
+pregunta: CUANTO ES NUEVE POR NUEVE MENOS DOS   ->   respuesta: 79
+pregunta: CUANTOS LADOS TIENE UN HEXÁGONO   ->   respuesta: 6
+pregunta: EN QUE AÑO SE FUNDÓ GOOGLE   ->   respuesta: 1998
+pregunta: CUAL ES EL LENGUAJE OFICIAL DE FINLANDIA   ->   respuesta: FINES
+pregunta: CUAL ES LA CAPITAL DE JAPON   ->   respuesta: TOKIO

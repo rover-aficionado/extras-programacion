@@ -1,0 +1,75 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+
+package extra.pkg33;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ * @author rober, created at @date at @time
+ * Acepta el reto 439
+ */
+public class Extra33 {
+
+    public static int resultado(String valor1, String valor2){ // devuelve el resultado del cálculo
+        int resultado=0;
+        String texto = "VDT=";
+        
+        // extrae los números
+        int n1 = Integer.parseInt(valor1.substring(2));
+        int n2 = Integer.parseInt(valor2.substring(2));
+        
+        
+        // verifica el valor, si es la velocidad, la distancia o el tiempo
+        switch (valor1.charAt(0)) {
+            case 'V': // si es la velocidad
+                valor1 = valor1.replace(texto, "");
+                valor2 = valor2.replace(texto, "");
+                resultado = n1*n2;    
+                break;
+            case 'D': // si es la distancia
+                valor1 = valor1.replace(texto, "");
+                valor2 = valor2.replace(texto, "");
+                resultado = n1/n2;    
+                break;
+            case 'T': // si es el tiempo
+                valor1 = valor1.replace(texto, "");
+                valor2 = valor2.replace(texto, "");
+                resultado = n1/n2;    
+                break;
+            default:
+                throw new AssertionError();
+        }
+        
+        return resultado;
+        
+    }
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        ArrayList<String> numeros = new ArrayList<String>();
+        
+        // inserción de datos
+        // verificar el número de iteraciones que se van a dar con los cálculos.
+        int repeticiones = Integer.parseInt(scn.next());
+        
+        // bucle para la inserción de los datos
+        for (int i = 0; i < repeticiones; i++) {
+            String valor1, valor2;
+            
+            valor1 = scn.next();
+            valor2 = scn.next();
+            
+            numeros.add(valor1 + "$" + valor2);
+            
+        }
+        
+        for (String numero : numeros) {
+            String[] valores = numero.split("\\$");
+            System.out.println(resultado(valores[0], valores[1]));
+        }
+    }
+
+}

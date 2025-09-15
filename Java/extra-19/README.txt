@@ -1,0 +1,1 @@
+si hay algún espacio vacío en el resultado del sudoku es por que ese sudoku no tiene solución. los espacios vacíos se nombran con '-'
