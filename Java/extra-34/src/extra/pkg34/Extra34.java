@@ -7,6 +7,7 @@ package extra.pkg34;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -15,11 +16,19 @@ import java.util.Scanner;
 public class Extra34 {
 
     public static int TiempoEmpleado(HashMap<Integer, ArrayList<Integer>> numeros){
-        int resultado;
+        int resultado= 0;
         
+        for (Map.Entry<Integer, ArrayList<Integer>> numero : numeros.entrySet()) {
+            Integer tiempoEmpleado = numero.getKey();
+            ArrayList<Integer> cantidadDefiniciones = numero.getValue();
+            
+            for(Integer definicion : cantidadDefiniciones) {
+                int multiplicacion = tiempoEmpleado*definicion;
+                resultado += multiplicacion;
+            }
+        }
         
-        
-        return 0;
+        return resultado;
     }
     
     public static void main(String[] args) {
@@ -47,6 +56,16 @@ public class Extra34 {
             } else {
                 break;
             }
+        }
+        
+        // ejecución de la operación para saber el tiempo empleado
+        try {
+            for (int mumero : numeros.keySet()) {
+                System.out.println(TiempoEmpleado(numeros));
+            }
+        } catch (Exception e) {
+            System.out.println("error al ejecutar la operacion");
+            System.out.println(e);
         }
     }
 }
